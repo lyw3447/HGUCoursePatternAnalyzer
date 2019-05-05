@@ -1,11 +1,11 @@
 package edu.handong.analysis;
 
-import edu.handong.analysis.datamodel.Course;
-import edu.handong.analysis.datamodel.Student;
+//import edu.handong.analysis;
+import edu.handong.analysis.datamodel;
 
 public class HGUCoursePatternAnalyzer {
 	
-	String[] lines = {	"1999-1, JC Nam, Java Programming",
+	private String[] lines = {	"1999-1, JC Nam, Java Programming",
 						"1999-2, JC Nam, Programming Language Theory",
 						"1999-1, JC Nam, Data Structures",
 						"2001-1, JC Nam, Database Systems",
@@ -19,11 +19,11 @@ public class HGUCoursePatternAnalyzer {
 						"2019-1, SJ Kim, Algorithm Analysis",
 						};
 
-	int numOfStudents;
-	int numOfCourses;
-	Student[] students;
-	Course[] courses;
-	//this is test ver.
+	private int numOfStudents;
+	private int numOfCourses;
+	private Student[] students;
+	private Course[] courses;
+
 	/**
 	 * This method runs our analysis logic to get the list of student and course names from lines.
 	 * @param args
@@ -54,11 +54,11 @@ public class HGUCoursePatternAnalyzer {
 	 * @return
 	 */
 	private Student[] initiateStudentArrayFromLines(String[] lines) {
-		
-		// TODO: implement this method
-		
-		
-		return null;
+		for (String l: lines){
+			System.out.println(l.split(",")[1]);			
+		}
+
+		return students;
 	}
 
 	/**
