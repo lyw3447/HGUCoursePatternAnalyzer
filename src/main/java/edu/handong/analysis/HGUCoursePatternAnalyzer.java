@@ -1,7 +1,7 @@
 package edu.handong.analysis;
 
-//import edu.handong.analysis;
-//import edu.handong.analysis.datamodel;
+import edu.handong.analysis;
+import edu.handong.analysis.datamodel;
 
 public class HGUCoursePatternAnalyzer {
 	
