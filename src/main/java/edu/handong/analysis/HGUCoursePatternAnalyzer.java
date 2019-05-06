@@ -1,7 +1,7 @@
 package edu.handong.analysis;
 
 //import edu.handong.analysis;
-import edu.handong.analysis.datamodel;
+//import edu.handong.analysis.datamodel;
 
 public class HGUCoursePatternAnalyzer {
 	
@@ -21,8 +21,8 @@ public class HGUCoursePatternAnalyzer {
 
 	private int numOfStudents;
 	private int numOfCourses;
-	private Student[] students;
-	private Course[] courses;
+	private Student[] students = new Student[numOfStudents];
+	private Course[] courses = new Course[numOfCourses];
 
 	/**
 	 * This method runs our analysis logic to get the list of student and course names from lines.
@@ -54,8 +54,11 @@ public class HGUCoursePatternAnalyzer {
 	 * @return
 	 */
 	private Student[] initiateStudentArrayFromLines(String[] lines) {
-		for (String l: lines){
-			System.out.println(l.split(",")[1]);			
+		int i = 0;
+		
+		for (String line: lines){
+			students[i] = new Student(line.split(",")[1]);			
+			i++;
 		}
 
 		return students;
@@ -69,7 +72,10 @@ public class HGUCoursePatternAnalyzer {
 	 */
 	private boolean studentExist(Student[] students, Student student) {
 		
-		// TODO: implement this method
+		for (Student name: students){
+			if(name.getName().equals(student))
+				return true;
+		}
 
 		return false;
 	}
@@ -80,8 +86,11 @@ public class HGUCoursePatternAnalyzer {
 	 * @return
 	 */
 	private Course[] initiateCourseArrayFromLines(String[] lines) {
-		
-		// TODO: implement this method
+		int i = 0;
+		for (String line: lines){
+			courses[i] = new Course(line.split(",")[2]);	
+			i++;		
+		}
 		
 		return null;
 	}
@@ -93,8 +102,11 @@ public class HGUCoursePatternAnalyzer {
 	 * @return boolean
 	 */
 	private boolean courseExist(Course[] courses, Course course) {
-		
-		// TODO: implement this method
+
+		for (Course name: courses){
+			if(name.getCourseName().equals(course))
+				return true;
+		}		
 
 		return false;
 	}
