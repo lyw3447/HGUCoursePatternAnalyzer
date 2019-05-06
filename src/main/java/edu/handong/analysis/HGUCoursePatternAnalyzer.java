@@ -1,7 +1,7 @@
 package edu.handong.analysis;
 
-import edu.handong.analysis;
-import edu.handong.analysis.datamodel;
+//import edu.handong.analysis;
+//import edu.handong.analysis.datamodel;
 
 public class HGUCoursePatternAnalyzer {
 	
@@ -55,10 +55,16 @@ public class HGUCoursePatternAnalyzer {
 	 */
 	private Student[] initiateStudentArrayFromLines(String[] lines) {
 		int i = 0;
+		String temp = " ";
 		
 		for (String line: lines){
-			students[i] = new Student(line.split(", ")[1]);			
-			i++;
+			String comp = line.split(", ")[1];
+
+			if(!(comp.equals(temp))){
+				students[i] = new Student(comp);			
+				i++;
+			}
+			temp = line;
 		}
 
 		return students;
@@ -87,12 +93,19 @@ public class HGUCoursePatternAnalyzer {
 	 */
 	private Course[] initiateCourseArrayFromLines(String[] lines) {
 		int i = 0;
+		String temp = " ";
+
 		for (String line: lines){
-			courses[i] = new Course(line.split(", ")[2]);	
-			i++;		
+			String comp = line.split(", ")[2];
+
+			if(!(comp.equals(temp))){
+				courses[i] = new Course(comp);	
+				i++;
+			}
+			temp = line;			
 		}
 		
-		return null;
+		return courses;
 	}
 
 	/**
