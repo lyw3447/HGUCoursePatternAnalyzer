@@ -77,7 +77,7 @@ public class HGUCoursePatternAnalyzer {
 	private boolean studentExist(Student[] students, Student student) {
 		
 		for (Student name: students){
-			if(name.getName().equals(student.getName()))
+			if(name != null && name.getName().equals(student.getName()))
 				return true;
 		}
 		return false;
@@ -112,7 +112,7 @@ public class HGUCoursePatternAnalyzer {
 	private boolean courseExist(Course[] courses, Course course) {
 
 		for (Course name: courses){
-			if(name.getCourseName().equals(course.getCourseName()))
+			if(name != null && name.getCourseName().equals(course.getCourseName()))
 				return true;		
 		}		
 
